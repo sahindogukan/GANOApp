@@ -199,7 +199,7 @@ const AppController = (function (lessonctrl, uictrl) {
        if (lessonName!=="" && lessonCredi!=="" && lessonCrediNote!==""){
 
            if (lessonCrediNote > 4 || lessonCrediNote < 0 || lessonCredi < 0) {
-                uictrl.alertMessage("Harf notu katsayısı (0-4) aralığında olmalıdır veya ders kredisi 0'dan küçük olamaz.")
+                uictrl.alertMessage("Harf notu katsayısı aralığı (0-4), ders kredisi (0-~) olmalıdır.")
            }
            else{
                lessonctrl.addLesson(lessonName,lessonCredi,lessonCrediNote);
@@ -232,13 +232,9 @@ const AppController = (function (lessonctrl, uictrl) {
         const lCredi =document.querySelector("#lessonCredi").value;
         const lCrediNote =document.querySelector("#lessonCrediNote").value;
         if (lName !=="" && lCredi !=="" && lCrediNote !=="") {
-            if (lCrediNote > 4 || lCrediNote<0) {
-                uictrl.alertMessage("Harf Notu Katsayısı (0-4): Lütfen geçerli bir değer giriniz.")
-            }
-            if (lCredi<0) {
-                uictrl.alertMessage("Ders kredisi eksi bir değer olamaz.")
-            }
-            else{
+            if (lCrediNote > 4 || lCrediNote<0 || lCredi<0) {
+                uictrl.alertMessage("Harf notu katsayısı aralığı (0-4), ders kredisi (0-~) olmalıdır.")
+            } else{
                 lessonctrl.updateLesson(lName,lCredi,lCrediNote);
                 uictrl.defaultShowAlert();
             }
