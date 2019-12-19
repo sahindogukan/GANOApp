@@ -215,7 +215,7 @@ const AppController = (function (lessonctrl, uictrl) {
            uictrl.alertMessage("Lütfen istenilen yerleri boşluksuz ve uygun formatta doldurun.")
        }
 
-        e.preventDefault();
+        e.preventDefault(); 
     };
     const selectedLesson = function (e) {
         if (e.target.classList.contains("selected")) {
