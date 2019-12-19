@@ -212,7 +212,7 @@ const AppController = (function (lessonctrl, uictrl) {
            }
        }
        else{
-           uictrl.alertMessage("Lütfen istenilen yerleri boşluksuz doldurun.")
+           uictrl.alertMessage("Lütfen istenilen yerleri boşluksuz ve uygun formatta doldurun.")
        }
 
         e.preventDefault();
@@ -240,7 +240,7 @@ const AppController = (function (lessonctrl, uictrl) {
             }
 
         }else{
-            uictrl.alertMessage("Güncelleme yapmak için bütün bilgileri eksiksiz doldurun.")
+            uictrl.alertMessage("Güncelleme yapmak için bütün bilgileri eksiksiz ve uygun formatta doldurun.")
         }
         e.preventDefault()
     };
