@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Üniversite Not Ortalaması Hesaplama</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-info">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <i class="fas fa-calculator"></i>
+                Üniversite Genel Ağırlıklı ve Dönem Notu Hesaplama Modülü
+        </a>
+    </div>
+</nav>
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input type="text" id="lessonName" placeholder="Ders adını girin." class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="number" id="lessonCredi" placeholder="Dersin kredisini girin." class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="number" id="lessonCrediNote" placeholder="Harf notu katsayısını girin. Örn: 2.5" class="form-control">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm addBtn">
+                    <i class="fas fa-plus"></i> Ekle
+                </button>
+                <button type="submit" class="btn btn-warning btn-sm saveBtn">
+                    <i class="fas fa-edit"></i> Güncelle
+                </button>
+                <button type="submit" class="btn btn-danger btn-sm deleteBtn">
+                    <i class="fas fa-times"></i> Sil
+                </button>
+                <button type="submit" class="btn btn-secondary btn-sm cancelBtn">
+                    <i class="fas fa-arrow-circle-left"></i> İptal
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+                    <i class="fas fa-edit"></i> Genel Ortalama Hesapla
+                </button>
+            </form>
+            <hr>
+            <div id="alert" class="alert alert-danger mt-3" role="alert">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Genel Ortalama Hesapla</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Dönem sayısı</label>
+                        </div>
+                        <input type="number" id="semesterCount" placeholder="Dönem adedini girin." class="form-control">
+                        <button type="submit" class="btn btn-primary btn-sm ml-2 noteBtn">Uygula</button>
+                    </div>
+                </div>
+                <form id="genelortalama" style="display: none" action="post">
+                    <div id="semester-list" class="input-group input-group-sm mb-3">
+
+                    </div>
+                    <div>
+                        <button id="semesterCalculate" type="submit" class="btn btn-primary btn-sm ml-4 mb-2">Hesapla</button>
+                    </div>
+                </form>
+
+
+                <div class="modal-footer">
+                    <label style="font-size: large" for="genel-ortalama">Genel Not Ortalaması:</label>
+                    <label style="font-weight: bold; font-size: x-large" id="genel-ortalama"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="productCard" class="card mt-3">
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>Ders Adı</th>
+                <th>Ders Kredisi</th>
+                <th>Harf Notu Katsayısı</th>
+            </tr>
+            <tbody id="lesson-list">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="card my-3">
+        <div class="card-footer text-left">
+            <h5>Dönem Notu Ortalaması: <strong><span id="donem-ortalama"></span></strong></h5>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body fixed-bottom">
+            <blockquote>
+                <footer class="blockquote-footer text-right">Dogukan SAHİN <a href="dogukansahin.net">dogukansahin.net</a></footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/ad79ca9f6c.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
