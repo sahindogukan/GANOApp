@@ -287,7 +287,7 @@ const AppController = (function (lessonctrl, uictrl) {
         if (sonuc == true) {
             document.querySelector("#genel-ortalama").textContent= (toplam/donemSayisi).toFixed(2);
         }else {
-            document.querySelector("#genel-ortalama").textContent= "Lütfen bütün alanları eksiksiz doldurun.";
+            document.querySelector("#genel-ortalama").textContent= "Lütfen bütün alanları eksiksiz ve uygun formatta doldurun.";
         }
 
         e.preventDefault();
